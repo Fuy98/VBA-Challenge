@@ -15,6 +15,8 @@ Sub Ticket_table()
     'Set an initial variable for holding the Total Stock Volume'
     Dim Total_SV As Double
     Total_SV = 0
+    
+    
 
     ' Keep track of the location for each Ticket symbol in the table
     Dim Summary_Table_Row As Integer
@@ -30,19 +32,19 @@ Sub Ticket_table()
     For i = 2 To LastRow
 
         ' Check if we are still within the Ticket symbol, if it is not...
-        If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
+        If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
 
             ' Set the Ticket symbol
-            Ticket_symbol = Cells(i, 1).Value
+            Ticket_symbol = ws.Cells(i, 1).Value
 
             ' Add to the Brand Total
-            Total_SV = Total_SV + Cells(i, 7).Value
+            Total_SV = Total_SV + ws.Cells(i, 7).Value
 
             ' Print the Ticket symbol in the Table
-            Range("I" & Summary_Table_Row).Value = Ticket_symbol
+            ws.Range("I" & Summary_Table_Row).Value = Ticket_symbol
 
             ' Print the Brand Amount to the Summary Table
-            Range("L" & Summary_Table_Row).Value = Total_SV
+            ws.Range("L" & Summary_Table_Row).Value = Total_SV
 
             ' Add one to the table row
             Summary_Table_Row = Summary_Table_Row + 1
@@ -54,15 +56,12 @@ Sub Ticket_table()
     
             Else
     
-                Total_SV = Total_SV + Cells(i, 7).Value
+                Total_SV = Total_SV + ws.Cells(i, 7).Value
 
         End If
 
-  Next i
-
-
-
-    
+    Next i
+   
   Next ws
   MsgBox ("Fixes Complete")
 End Sub
