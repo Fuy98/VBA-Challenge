@@ -11,4 +11,4 @@ The percentage change from the opening price at the beginning of a given year to
 
 The total stock volume of the stock. 
 
-![image](https://user-images.githubusercontent.com/79111629/231069739-b84cd60b-bc87-4706-8ce4-fb6ef3562880.png)
+![image](https://user-images.githubusercontent.com/79111629/231069847-afb476c8-cd04-4ccd-92ef-c972a4ab6039.png)
